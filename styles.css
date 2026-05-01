@@ -30,10 +30,14 @@ p {
     max-width: 85ch; /* ideal reading width */
     margin-bottom: 1.2em;
 }
-li{
+ul {
+    padding-left: 1.5em; /* restore indentation */
+}
+
+li {
+    text-align: left;   /* key change */
+    margin: 0.5em auto;
     font-family: Lato;
-    text-align: center;
-    margin: 0 auto;
     line-height: 1.6;
     max-width: 85ch; /* ideal reading width */
     margin-bottom: 1.2em;
