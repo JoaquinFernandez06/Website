@@ -31,12 +31,14 @@ p {
     margin-bottom: 1.2em;
 }
 ul {
-    padding-left: 1.5em; /* restore indentation */
+    padding-left: 1.5em;
+    max-width: 85ch;
+    margin: 0 auto;  /* centers the whole list block */
 }
 
 li {
     text-align: left;   /* key change */
-    margin: 0.5em auto;
+    margin: 0.5em 0;
     font-family: Lato;
     line-height: 1.6;
     max-width: 85ch; /* ideal reading width */
