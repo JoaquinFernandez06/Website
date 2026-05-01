@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Pirata+One" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <h1>Archery Simulator</h1>
+        <p>This program simulates 12th Century archery tournaments and tracks the stats and careers of the archers who compete in them.</p>
+
+        <h2>Features</h2>
+        <h3>Tournament Simulation</h3>
+        <p>
+            Tournaments are conducted round by round in a PHP generated table. Every round every archer "shoots", with a one second delay between shots. The tournament 
+            table updates to show how many points each archer got that round as well as each archer's running total and running average. Once a 
+            round finishes the table rearranges to keep the archers constantly ordered by score. Pressing the "Next Round" button while a round is live
+            eliminates the one second delay between shots for a faster simulation. Between rounds the distance the archers must shoot increases and the
+            wind speed and wind direction update randomly.
+        </p></br>
+        <p>
+            If multiple archers are tied for podium positions (1st, 2nd, 3rd) after the final round they go into sudden death rounds.
+            If 1st and 2nd place are tied, and 3rd and 4th place are tied, the code has the ability to conduct two separate sudden death rounds,
+            with the distance resetting to prevent the second sudden death face off from having to shoot a massive distance.
+        </p><br>
+        <p>
+            When a tournament concludes, the final podium is announced at the top of the page and a button marked "Continue" appears. This button triggers all inter-tournament actions.
+        </p><br>
+        <h3>Archer Management</h3>
+        <p>
+            All active archers are stored in the included database. When the PHP generates the table for a tournament it includes a mix
+            of active archers and new archers ("marked with a (R) to indicate rookie"). After a tournament, when the Continue button is selected,
+            bad archers "retire" (get deleted from the database). The archers who don't retire have their stats updated to allow the user to
+            see their performance over the course of their career.
+        </p>
+        <h3>Tournament Customization</h3>
+        <p>
+            The home page provides many different customization options for a tournament. Users can decide on a tournament name,
+            number of archers, number of rounds, starting distance, extremity of weather, and tournament format (who has the most points
+            after a certain number of rounds, or sudden death elimination).
+        </p>
+        <h3>Home Page Features</h3>
+        <p>
+            The home page has several additional features that allow users to interact with their archers more. These include:
+            <li>A Hall of Fame for the retired archers who had the best career. An archer's Hall of Fame eligibility is updated throughout their career</li>
+            <li>A list of the 20 current best archers. These archers also have their rank next to their name during tournaments</li>
+            <li>An archer search box if a user wants to see the stats for a specific archer</li>
+        </p>
+        <h3>Date Tracking</h3>
+        <p>
+            The application also has a running date displayed at the top of the home page. The starting date was arbitrarily chosen to be
+            January 1, 1180 and increments a random amount between tournaments. In addition to allowing for more accurate aging of archers,
+            this feature increases the immersion for the user by allowing them to have things like seasonal tournaments.
+        </p>
+        <h2>Coding Languages</h2>
+        <p>
+            The majority of the tournament functionality is done using JavaScript. PHP is used for database calls (because it's much
+            easier in PHP vs JS) like selecting the archers for the tournament and updating their stats afterwards. All site framework
+            is naturally done in HTML. Currently no CSS is used but that's something I could see myself adding in the future.
+        </p>
+        <h2>Future Updates</h2>
+        <p>
+            The application's functionality is satisfactory. Most future improvements would be for the user's benefit to increase their enjoyment and immersion. These include:
+            <li>A feature that allows the user to record a memorable moment from a tournament and view those saved moments on the home page</li>
+            <li>Allowing users to create tournaments that occur on the same day every year instead of always making sporadic time jumps</li>
+            <li>Developing a rating system that describes how good an archer is now. Currently the only rating system is the one for the Hall of Fame which measures an archer's success over the course of their whole career. For ranking purposes it would be helpful to be able to judge an archer's performance over their last few tournaments</li>
+            <li>List the ranking of all non-rookie archers, not just the top 20</li>
+            <li>Adding additional tournament formats</li>
+            <li>Moving all PHP calls from index file to separate files</li>
+            <li>Adding CSS for aesthetic improvements</li>
+        </p>
+
+        <h2>A video showing a run through of a tournament as well as the features of the home page</h2>
+        <iframe
+                src="https://youtu.be/QLxykgT4yWY"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
+    </body>
+    <footer>
+        <a href="index.html">Return to home page</a>
+    </footer>
+</html>
