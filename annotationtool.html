@@ -7,7 +7,45 @@
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     </head>
     <body>
-
+        <h1>PDF Annotation Tool</h1>
+        <p>
+            This tool is part of a project I worked on with another student for my college's graphic design department. The idea was to
+            create a website where the professor could load up the PDF of a student's project, make notes and annotations on each page, add
+            then compress the annotations to the PDF so that it could be returned to the student. I was in charge of making the annotation tool.
+        </p>
+        <h2>Frontend Features</h2>
+        <p>
+            The user uploads a PDF and then is able to mark it up using pen, eraser, and text tools. There are also options to change the
+            color and size of the tools. There are also buttons to undo the last annotation and to clear all annotations. The user can switch
+            between pages of the PDF by using the Next Page and Previous Page buttons or by searching and jumping to a specific page.
+        </p>
+        <h2>Backend Features</h2>
+        <h3>File Uploading</h3>
+        <p>
+            When the user uploads a file the HTML canvas element is automatically resized to be the size of the PDF to allow the user to
+            draw all over the PDF. Additionally, when a file is loaded, all previous annotations are accessed from a database so that the
+            user can pick up where they left off. The same actions are taken when the user changes page.
+        </p>
+        <h3>Annotating</h3>
+        <p>
+            All annotations are saved as vectors to an array called "strokes". The postition and coordinates of the annotation is saved as
+            well as its size, color, and the tool used. The undo button pops the last annotation added to the array and the clear button resets
+            the array. The eraser tool is also saved as an annotation rather than undoing previous annotations, making it more versatile.
+        </p>
+        <h3>Annotation Saving</h3>
+        <p>
+            Annotations are saved during one of the following actions: a new file is uploaded, the page is changed, the clear button is selected,
+            the user presses the save button, or after every 5 annotations (to avoid excessively querying the database). When the save method
+            is called, the strokes array is sent to the database as JSON data along with the file name and page number as the primary keys.
+        </p>
+        <h2>A video showing the annotation tool at work</h2>
+        <iframe
+                src="https://youtube.com/embed/UoFWqRA62Qw"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
     </body>
     <footer>
         <a href="index.html">Return to home page</a>
